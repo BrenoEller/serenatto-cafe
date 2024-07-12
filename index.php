@@ -27,7 +27,7 @@
 </head>
 <body>
     <main>
-        <section class="container-banner">
+        <section class="container-banner" style="display:block !important">
             <div class="container-texto-banner">
                 <img src="img/logo-serenatto.png" class="logo" alt="logo-serenatto">
             </div>

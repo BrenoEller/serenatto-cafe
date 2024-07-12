@@ -14,14 +14,14 @@ class Produto
 
     private float $preco;
     
-    public function __construct(?int $id, string $tipo, string $nome, string $descricao, float $preco, string $imagem = "logo-serenatto.png")
+    public function __construct(?int $id, string $tipo, string $nome, string $descricao, string $imagem, float $preco)
     {
         $this->id = $id;
         $this->tipo = $tipo;
         $this->nome = $nome;
         $this->descricao = $descricao;
-        $this->preco = $preco;
         $this->imagem = $imagem;
+        $this->preco = $preco;
     }
 
     public function getId(): int
@@ -59,8 +59,16 @@ class Produto
         return "R$ " . number_format($this->preco, 2);
     }
 
-    public function getImagemDiretorio(): string
+    public function setImagem(string $imagem): void
     {
+        $this->imagem = $imagem;
+    }
+
+    public function getImagemDiretorio(): string
+    {   
+        if ($this->imagem == null) {
+            return "img/".$this->imagem = "icone-serenatto.png";
+        }
         return "img/".$this->imagem;
     }
 }
